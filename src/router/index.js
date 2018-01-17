@@ -8,14 +8,15 @@ Vue.use(Router)
 export default new Router({
   linkActiveClass: 'active',        // 设置活动类名称
   routes: [
-    { // 重定向到首页
+    {
       name: 'Blogs',
-      path: '/',
+      path: '/blogs',
       component: Blogs,
       children: [
         {name: 'BlogsList',   path: '/blogs/blogsList',   component: BlogsList},
         {name: 'BlogsInput',  path: '/blogs/blogsInput',  component: BlogsInput}
       ],
+      // 重定向到首页
       redirect: {
           name: 'BlogsList'
       }
